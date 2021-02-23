@@ -1,10 +1,8 @@
 FROM python:3.9-alpine
 
-RUN pip install -r requirements.txt
+RUN pip install algoliaseach
 
 ADD entrypoint.sh /entrypoint.sh
-
-ADD requirements.txt /requirements.txt
 
 ADD main.py /main.py
 
