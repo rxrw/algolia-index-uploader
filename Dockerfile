@@ -1,6 +1,6 @@
 FROM python:3.9-alpine
 
-RUN pip install algoliaseach
+RUN pip install algoliasearch
 
 ADD entrypoint.sh /entrypoint.sh
 
