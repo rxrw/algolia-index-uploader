@@ -2,9 +2,9 @@ from algoliasearch.search_client import SearchClient
 import os
 import json
 
-client = SearchClient.create(os.environ["ALGOLIA_INDEX_ID"], os.environ["ALGOLIA_INDEX_ADMIN_KEY"])
-index = client.init_index(os.environ["ALGOLIA_INDEX_NAME"])
-path = "%s/%s".format(os.environ["GITHUB_WORKSPACE"], os.environ["INDEX_PATH"])
+client = SearchClient.create(os.environ.get("ALGOLIA_INDEX_ID"), os.environ.get("ALGOLIA_INDEX_ADMIN_KEY"))
+index = client.init_index(os.environ.get("ALGOLIA_INDEX_NAME"))
+path = "%s/%s".format(os.environ.get("GITHUB_WORKSPACE"), os.environ.get("INDEX_PATH"))
 
 fp = open(path, 'r')
 
@@ -16,4 +16,4 @@ result = json.dumps(json_content)
 
 index.save_objects(result)
 
-print("上传%s成功".format(os.environ["INDEX_PATH"]))
+print("上传%s成功".format(os.environ.get("INDEX_PATH")))
