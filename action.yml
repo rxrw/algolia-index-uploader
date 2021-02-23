@@ -1,0 +1,27 @@
+name: 'Algolia Index Uploader'
+author: 'rxrw'
+description: 'Automatically Upload Algolia Index'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    INDEX_PATH: ${{ inputs.index_path }}
+    ALGOLIA_INDEX_ID: ${{ inputs.algolia_index_id }}
+    ALGOLIA_INDEX_NAME: ${{ inputs.algolia_index_name }}
+    ALGOLIA_INDEX_ADMIN_KEY: ${{ inputs.algolia_index_admin_key }}
+branding:
+  icon: 'arrow-up-circle'
+  color: 'purple'
+inputs:
+  index_path:
+    description: "Your Algolia IndexPath"
+    required: true
+  algolia_index_id:
+    description: "Algolia Index Id"
+    required: true
+  algolia_index_name:
+    description: "Algolia Index Name"
+    required: true
+  algolia_index_admin_key:
+    description: "Algolia Admin Key"
+    required: true
