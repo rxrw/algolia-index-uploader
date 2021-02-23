@@ -10,6 +10,8 @@ fp = open(path, 'r')
 
 content = fp.readlines()
 
-index.save_objects(content)
+result = json.loads(content)
+
+index.save_objects(result)
 
 print("上传{}成功".format(os.environ.get("INDEX_PATH")))
