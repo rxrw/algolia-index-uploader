@@ -11,4 +11,6 @@ with open(path, 'r') as f:
 
 data = json.loads(content)
 
+index.save_objects(data)
+
 print("上传{}成功".format(os.environ.get("INDEX_PATH")))
